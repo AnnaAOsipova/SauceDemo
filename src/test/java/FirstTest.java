@@ -14,7 +14,6 @@ public class FirstTest extends BaseTest {
 
         browser.findElement(By.id("user-name")).sendKeys("standard_user");
         browser.findElement(By.id("user-name")).sendKeys(COMMAND + "A");
-
         browser.findElement(By.id("user-name")).sendKeys(Keys.BACK_SPACE);
         browser.findElement(By.id("user-name")).sendKeys("standard_user");
         browser.findElement(By.xpath("//*[@data-test='password']")).sendKeys("secret_sauce");
