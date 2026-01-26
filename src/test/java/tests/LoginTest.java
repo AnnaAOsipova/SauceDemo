@@ -18,37 +18,40 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectLogin() {
         loginPage.open();
-        loginPage.login("locked_out_user","secret_sauce");
+        loginPage.login("locked_out_user", "secret_sauce");
 
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об ошибке");
         assertEquals(loginPage.getErrorText(),
                 "Epic sadface: Sorry, this user has been locked out.",
                 "Не верный текст сообщение об ошибке");
     }
+
     @Test
     public void emptyLogin() {
         loginPage.open();
-        loginPage.login("","secret_sauce");
+        loginPage.login("", "secret_sauce");
 
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об ошибке");
         assertEquals(loginPage.getErrorText(),
                 "Epic sadface: Username is required",
                 "Не верный текст сообщение об ошибке");
     }
+
     @Test
     public void emptyPassword() {
         loginPage.open();
-        loginPage.login("standard_user","");
+        loginPage.login("standard_user", "");
 
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об ошибке");
         assertEquals(loginPage.getErrorText(),
                 "Epic sadface: Password is required",
                 "Не верный текст сообщение об ошибке");
     }
+
     @Test
     public void loginMistake() {
         loginPage.open();
-        loginPage.login("standard_useR","secret_sauce");
+        loginPage.login("standard_useR", "secret_sauce");
 
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об ошибке");
         assertEquals(loginPage.getErrorText(),
