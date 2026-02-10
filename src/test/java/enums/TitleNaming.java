@@ -3,7 +3,7 @@ package enums;
 public enum TitleNaming {
     PRODUCTS("Products"),
     CART("Your Cart"),
-    CHECKOUT("Chckout: Your Information");
+    CHECKOUT("Checkout: Your Information");
     private final String displayName;
 
     TitleNaming(String displayName) {

@@ -12,7 +12,7 @@ public class CartTest extends BaseTest {
 
     @Test
     public void checkGoodsAdded() {
-        System.out.println("CartTest.correct ! in thread: " + Thread.currentThread().getId());
+        System.out.println("CartTest.correct ! in thread: " + Thread.currentThread().threadId());
         loginPage.open();
         loginPage.login(withAdminPermission());
         assertEquals(productsPage.checkTitleName(), PRODUCTS.getDisplayName());
